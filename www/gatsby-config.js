@@ -156,13 +156,13 @@ module.exports = {
         gatsbyRemarkPlugins: [
           `gatsby-remark-embedder`,
           `gatsby-remark-graphviz`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 786,
-              backgroundColor: `#ffffff`,
-            },
-          },
+          // {
+          //   resolve: `gatsby-remark-images`,
+          //   options: {
+          //     maxWidth: 786,
+          //     backgroundColor: `#ffffff`,
+          //   },
+          // },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
@@ -187,13 +187,13 @@ module.exports = {
           `gatsby-remark-embedder`,
           `gatsby-remark-graphviz`,
           `gatsby-remark-code-titles`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 786,
-              backgroundColor: `#ffffff`,
-            },
-          },
+          // {
+          //   resolve: `gatsby-remark-images`,
+          //   options: {
+          //     maxWidth: 786,
+          //     backgroundColor: `#ffffff`,
+          //   },
+          // },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
