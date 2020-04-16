@@ -227,7 +227,7 @@ export const pageQuery = graphql`
       limit: 2000
       filter: {
         fields: { released: { eq: true } }
-        fileAbsolutePath: { regex: "/docs.blog/" }
+        fileAbsolutePath: { regex: "/docs_new.blog/" }
       }
     ) {
       group(field: frontmatter___tags) {

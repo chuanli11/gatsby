@@ -54,7 +54,7 @@ if (process.env.AIRTABLE_API_KEY) {
 }
 
 if (i18nEnabled) {
-  const naughtyFiles = [`docs/docs/data-fetching.md`]
+  const naughtyFiles = [`docs_new/docs/data-fetching.md`]
   dynamicPlugins.push(
     ...langCodes.map(code => ({
       resolve: `gatsby-source-git`,
@@ -62,7 +62,7 @@ if (i18nEnabled) {
         name: `docs-${code}`,
         remote: `https://github.com/gatsbyjs/gatsby-${code}.git`,
         branch: `master`,
-        patterns: [`docs/**`, ...naughtyFiles.map(file => `!${file}`)],
+        patterns: [`docs_new/**`, ...naughtyFiles.map(file => `!${file}`)],
       },
     })),
     {
@@ -103,7 +103,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `docs`,
-        path: `${__dirname}/../docs/`,
+        path: `${__dirname}/../docs_new/`,
       },
     },
     {
@@ -286,7 +286,7 @@ module.exports = {
                   limit: 10,
                   filter: {
                     frontmatter: { draft: { ne: true } }
-                    fileAbsolutePath: { regex: "/docs.blog/" }
+                    fileAbsolutePath: { regex: "/docs_new.blog/" }
                   }
                 ) {
                   nodes {

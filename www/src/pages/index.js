@@ -160,7 +160,7 @@ export const pageQuery = graphql`
       limit: 4
       filter: {
         frontmatter: { draft: { ne: true } }
-        fileAbsolutePath: { regex: "/docs.blog/" }
+        fileAbsolutePath: { regex: "/docs_new.blog/" }
         fields: { released: { eq: true } }
       }
     ) {

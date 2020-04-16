@@ -250,16 +250,6 @@ export const pageQuery = graphql`
         rawDate: date
         canonicalLink
         tags
-        image {
-          childImageSharp {
-            resize(width: 1500) {
-              src
-            }
-            fluid(maxWidth: 786) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         imageAuthor
         imageAuthorLink
         imageTitle

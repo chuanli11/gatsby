@@ -102,7 +102,7 @@ export const pageQuery = graphql`
       sort: { order: DESC, fields: [frontmatter___date, fields___slug] }
       filter: {
         frontmatter: { draft: { ne: true } }
-        fileAbsolutePath: { regex: "/docs.blog/" }
+        fileAbsolutePath: { regex: "/docs_new.blog/" }
         fields: { released: { eq: true } }
       }
       limit: $limit
