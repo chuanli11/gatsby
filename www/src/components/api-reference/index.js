@@ -44,41 +44,41 @@ export default ({
   </React.Fragment>
 )
 
-export const pageQuery = graphql`
-  fragment DocumentationDescriptionFragment on DocumentationJs {
-    name
-    description {
-      childMdx {
-        body
-      }
-    }
-    deprecated {
-      childMdx {
-        body
-      }
-    }
-  }
+// export const pageQuery = graphql`
+//   fragment DocumentationDescriptionFragment on DocumentationJs {
+//     name
+//     description {
+//       childMdx {
+//         body
+//       }
+//     }
+//     deprecated {
+//       childMdx {
+//         body
+//       }
+//     }
+//   }
 
-  fragment DocumentationFragment on DocumentationJs {
-    kind
-    ...DocumentationDescriptionFragment
-    ...DocumentationExampleFragment
-    ...DocumentationParamsFragment
-    ...DocumentationReturnsFragment
-  }
+//   fragment DocumentationFragment on DocumentationJs {
+//     kind
+//     ...DocumentationDescriptionFragment
+//     ...DocumentationExampleFragment
+//     ...DocumentationParamsFragment
+//     ...DocumentationReturnsFragment
+//   }
 
-  fragment ApiCallFragment on GatsbyAPICallGroupConnection {
-    name: fieldValue
-    nodes {
-      file
-      codeLocation {
-        start {
-          line
-        }
-        end {
-          line
-        }
-      }
-    }
-  }
-`
+//   fragment ApiCallFragment on GatsbyAPICallGroupConnection {
+//     name: fieldValue
+//     nodes {
+//       file
+//       codeLocation {
+//         start {
+//           line
+//         }
+//         end {
+//           line
+//         }
+//       }
+//     }
+//   }
+// `

@@ -79,7 +79,7 @@ export default function APITemplate({ data, location, pageContext }) {
   const page = data.mdx
 
   // Cleanup graphql data for usage with API rendering components
-  const mergedFuncs = mergeFunctions(data, pageContext)
+  // const mergedFuncs = mergeFunctions(data, pageContext)
   const description = page.frontmatter.description || page.excerpt
 
   return (
@@ -120,7 +120,7 @@ export default function APITemplate({ data, location, pageContext }) {
           <div>
             <MDXRenderer slug={page.fields.slug}>{page.body}</MDXRenderer>
             <h2>{page.frontmatter.contentsHeading || "APIs"}</h2>
-            <APIContents docs={mergedFuncs} />
+            {/* <APIContents docs={mergedFuncs} /> */}
             <h2>Reference</h2>
             <APIReference
               docs={mergedFuncs}
@@ -137,7 +137,7 @@ export default function APITemplate({ data, location, pageContext }) {
 }
 
 export const pageQuery = graphql`
-  query($path: String!, $jsdoc: [String], $apiCalls: String) {
+  query($path: String!, $jsdoc: [String]) {
     mdx(fields: { slug: { eq: $path } }) {
       body
       excerpt
@@ -160,7 +160,6 @@ export const pageQuery = graphql`
         childrenDocumentationJs {
           memberof
           name
-          ...DocumentationFragment
           availableIn
           codeLocation {
             start {
@@ -172,11 +171,6 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
-    nodeAPIs: allGatsbyApiCall(filter: { group: { eq: $apiCalls } }) {
-      group(field: name) {
-        ...ApiCallFragment
-      }
-    }
+    }    
   }
 `

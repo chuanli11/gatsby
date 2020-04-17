@@ -4,7 +4,7 @@ const fs = require(`fs-extra`)
 const child_process = require(`child_process`)
 const startersRedirects = require(`./starter-redirects.json`)
 const yaml = require(`js-yaml`)
-const redirects = yaml.load(fs.readFileSync(`./redirects.yaml`))
+// const redirects = yaml.load(fs.readFileSync(`./redirects.yaml`))
 const { i18nEnabled } = require(`./src/utils/i18n`)
 
 const docs = require(`./src/utils/node/docs.js`)
@@ -14,14 +14,15 @@ const creators = require(`./src/utils/node/creators.js`)
 const packages = require(`./src/utils/node/packages.js`)
 const features = require(`./src/utils/node/features.js`)
 const sections = [docs, showcase, starters, creators, packages, features]
+// const sections = [docs, showcase, starters, creators, features]
 
 exports.createPages = async helpers => {
   const { actions } = helpers
   const { createRedirect } = actions
 
-  redirects.forEach(redirect => {
-    createRedirect({ isPermanent: true, ...redirect, force: true })
-  })
+  // redirects.forEach(redirect => {
+  //   createRedirect({ isPermanent: true, ...redirect, force: true })
+  // })
 
   Object.entries(startersRedirects).forEach(([fromSlug, toSlug]) => {
     createRedirect({
