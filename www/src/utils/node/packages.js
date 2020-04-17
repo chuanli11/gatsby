@@ -49,14 +49,14 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       })
     } else {
-      createPage({
-        path: node.slug,
-        component: slash(remotePackageTemplate),
-        context: {
-          slug: node.slug,
-          id: node.id,
-        },
-      })
+      // createPage({
+      //   path: node.slug,
+      //   component: slash(remotePackageTemplate),
+      //   context: {
+      //     slug: node.slug,
+      //     id: node.id,
+      //   },
+      // })
     }
   })
 }
