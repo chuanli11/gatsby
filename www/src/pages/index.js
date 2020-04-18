@@ -88,7 +88,7 @@ class IndexRoute extends React.Component {
             content="Blazing fast modern site generator for React. Go beyond static sites: build blogs, e-commerce sites, full-blown apps, and more with Gatsby."
           />
         </Helmet>
-        <main
+        {/* <main
           id={`reach-skip-nav`}
           css={{
             display: `flex`,
@@ -135,7 +135,7 @@ class IndexRoute extends React.Component {
           <HomepageBlog posts={postsData} />
 
           <HomepageNewsletter />
-        </main>
+        </main> */}
         <FooterLinks />
       </>
     )
