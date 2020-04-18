@@ -10,6 +10,9 @@ import {
   TutorialIcon,
   PluginsIcon,
   ShowcaseIcon,
+  BenchmarksIcon,
+  GpusIcon,
+  ModelsIcon,  
 } from "../assets/icons"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { svgStyles } from "../utils/styles"
@@ -47,6 +50,9 @@ const navItems = [
   // { id: `plugins`, text: t`Plugins`, icon: PluginsIcon },
   // { id: `blog`, text: t`Blog`, icon: BlogIcon },
   // { id: `showcase`, text: t`Showcase`, icon: ShowcaseIcon },
+  { id: "benchmarks", text: t`Benchmarks`, icon: BenchmarksIcon },
+  { id: "gpus", text: t`GPUs`, icon: GpusIcon },
+  { id: "models", text: t`Models`, icon: ModelsIcon }, 
 ]
 
 const MobileNavigation = ({ i18n }) => (

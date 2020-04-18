@@ -3,11 +3,11 @@ import { jsx } from "theme-ui"
 import Link from "../localized-link"
 import { t, Trans } from "@lingui/macro"
 
-const links = [
-  { to: `/accessibility-statement/`, text: t`Accessibility Statement` },
-  { to: `/contributing/code-of-conduct/`, text: t`Code of Conduct` },
-  { to: `/guidelines/logo/`, text: t`Logo & Assets` },
-]
+// const links = [
+//   { to: `https://lambdalabs.com/about`, text: t`About` },
+//   { to: `/contributing/code-of-conduct/`, text: t`Code of Conduct` },
+//   { to: `/guidelines/logo/`, text: t`Logo & Assets` },
+// ]
 
 const FooterLinks = props => (
   <footer>
@@ -47,16 +47,24 @@ const FooterLinks = props => (
         },
       }}
     >
-      {links.map(({ to, text }) => (
-        <li key={to}>
-          <Link to={to}>
-            <Trans id={text} />
-          </Link>
-        </li>
-      ))}
       <li>
-        <a href="https://www.gatsbyjs.com">Gatsbyjs.com</a>
+        <a href="https://deeptalk.lambdalabs.com/">Forum</a>
       </li>
+      <li>
+        <a href="https://lambdalabs.com/about">About</a>
+      </li>
+      <li>
+        <a href="https://lambdalabs.com/blog/">Blog</a>
+      </li>
+      <li>
+        <a href="https://lambdalabs.com/legal">Term of Sale</a>
+      </li>                        
+      <li>
+        <a href="https://lambdalabs.com/careers">Careers</a>
+      </li>
+      <li>
+        <a href="https://lambdalabs.com/contact">Contact</a>
+      </li>      
     </ul>
   </footer>
 )

@@ -44,9 +44,9 @@ const Banner = () => (
   >
     <InnerContainer>
       <Content>
-        {`New! Get 20x faster builds with `}
-        <OutboundLink href="https://www.gatsbyjs.com/cloud">
-          Gatsby Cloud!
+        {`New! Get your GPU resources from `}
+        <OutboundLink href="https://lambdalabs.com/service/gpu-cloud">
+          Lambda Cloud!
         </OutboundLink>
       </Content>
     </InnerContainer>

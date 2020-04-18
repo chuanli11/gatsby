@@ -6,13 +6,14 @@ import { t, Trans } from "@lingui/macro"
 import { GoMarkGithub as GithubIcon } from "react-icons/go"
 import {
   FaTwitter as TwitterIcon,
-  FaDiscord as DiscordIcon,
+  FaFacebook as FacebookIcon,
+  FaHome as HomeIcon,
 } from "react-icons/fa"
 
 import Link from "./localized-link"
 import SearchForm from "./search-form"
-import logo from "../assets/logo.svg"
-import logoInverted from "../assets/logo-inverted.svg"
+import logo from "../assets/lambda-labs-logo.png"
+import logoInverted from "../assets/lambda-labs-logo.png"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { breakpointGutter } from "../utils/styles"
 import DarkModeToggle from "./dark-mode-toggle"
@@ -85,13 +86,9 @@ const SocialNavItem = ({ href, title, children }) => (
 )
 
 const navItems = [
-  // { id: "docs", text: t`Docs` },
-  // { id: "tutorial", text: t`Tutorial` },
-  // { id: "plugins", text: t`Plugins` },
-  // { id: "features", text: t`Features` },
-  // { id: "blog", text: t`Blog` },
-  // { id: "showcase", text: t`Showcase` },
-  // { id: "contributing", text: t`Contributing` },
+  { id: "benchmarks", text: t`Benchmarks` },
+  { id: "gpus", text: t`GPUs` },
+  { id: "models", text: t`Models` },
 ]
 
 const Navigation = ({ pathname, i18n }) => {
@@ -214,7 +211,7 @@ const Navigation = ({ pathname, i18n }) => {
             ))}
           </ul>
         </nav>
-        <SearchForm key="SearchForm" offsetVertical={navItemTopOffset} />
+        {/* <SearchForm key="SearchForm" offsetVertical={navItemTopOffset} /> */}
         <div
           sx={{
             alignSelf: `flex-end`,
@@ -222,7 +219,7 @@ const Navigation = ({ pathname, i18n }) => {
           }}
         >
           <SocialNavItem
-            href="https://github.com/gatsbyjs/gatsby"
+            href="https://github.com/lambdal/"
             title="GitHub"
           >
             <GithubIcon />
@@ -233,12 +230,16 @@ const Navigation = ({ pathname, i18n }) => {
               [mediaQueries.xl]: { display: `flex` },
             }}
           >
-            <SocialNavItem href="https://twitter.com/gatsbyjs" title="Twitter">
+            <SocialNavItem href="https://twitter.com/lambdaapi?lang=en" title="Twitter">
               <TwitterIcon />
             </SocialNavItem>
-            <SocialNavItem href="https://gatsby.dev/discord" title="Discord">
-              <DiscordIcon />
+            <SocialNavItem href="https://www.facebook.com/lambdalabs/" title="Facebook">
+              <FacebookIcon />
+            </SocialNavItem>            
+            <SocialNavItem href="https://lambdalabs.com" title="Homepage">
+              <HomeIcon />
             </SocialNavItem>
+            
           </div>
           <div
             sx={{

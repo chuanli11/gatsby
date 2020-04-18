@@ -1,0 +1,17 @@
+- title: Benchmarks
+  key: benchmarks
+  disableAccordions: false
+  disableExpandAll: true
+  items:
+    - title: Overview
+      link: /benchmarks/
+      items:
+        # some common comparisons people also looked at on npmtrends.com
+        - title: Throughput (FP32)
+          link: /benchmarks/throughput/fp32/
+        - title: Throughput (FP16)
+          link: /benchmarks/throughput/fp16/
+        - title: Batch Size (FP32)
+          link: /benchmarks/batchsize/fp32/
+        - title: Batch Size (FP16)
+          link: /benchmarks/batchsize/fp16/            

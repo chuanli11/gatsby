@@ -17,3 +17,8 @@ Something here for section one.
 Something here for section two
 
 ## Benchmark
+
+import { ModelChart } from './../../../www/src/components/lambda-items.js'
+
+<ModelChart selected_model='resnet50' selected_gpu='V100' />
+

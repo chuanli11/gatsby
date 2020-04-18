@@ -146,8 +146,8 @@ function SearchForm({ i18n }) {
               `width ${t.transition.speed.default} ${t.transition.curve.default}, padding ${t.transition.speed.default} ${t.transition.curve.default}`,
           }}
           type="search"
-          placeholder={i18n._(t`Search gatsbyjs.org`)}
-          aria-label={i18n._(t`Search gatsbyjs.org`)}
+          placeholder={i18n._(t`Search lambdalabs.com`)}
+          aria-label={i18n._(t`Search lambdalabs.com`)}
           title={i18n._(t`Hit 's' to search docs`)}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}

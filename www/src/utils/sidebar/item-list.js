@@ -2,6 +2,9 @@ import docsSidebar from "../../data/sidebars/doc-links.yaml"
 import contributingSidebar from "../../data/sidebars/contributing-links.yaml"
 import featuresSidebar from "../../data/sidebars/features-links.yaml"
 import tutorialSidebar from "../../data/sidebars/tutorial-links.yaml"
+import gpusSidebar from "../../data/sidebars/gpus-links.yaml"
+import benchmarksSidebar from "../../data/sidebars/benchmarks-links.yaml"
+import modelsSidebar from "../../data/sidebars/models-links.yaml"
 
 import { getLocaleAndBasePath } from "../i18n"
 
@@ -44,12 +47,18 @@ const itemListDocs = extendSidebarData(docsSidebar)
 const itemListTutorial = extendSidebarData(tutorialSidebar)
 const itemListContributing = extendSidebarData(contributingSidebar)
 const itemListFeatures = extendSidebarData(featuresSidebar)
+const itemListGPUs = extendSidebarData(gpusSidebar)
+const itemListBenchmarks = extendSidebarData(benchmarksSidebar)
+const itemListModels = extendSidebarData(modelsSidebar)
 
 const itemListLookup = {
   docs: itemListDocs,
   contributing: itemListContributing,
   tutorial: itemListTutorial,
   features: itemListFeatures,
+  gpus: itemListGPUs,
+  benchmarks: itemListBenchmarks,
+  models: itemListModels,  
 }
 
 function getItemList(path) {

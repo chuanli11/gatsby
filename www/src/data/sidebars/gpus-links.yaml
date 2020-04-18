@@ -1,0 +1,13 @@
+- title: GPUs
+  key: gpus
+  disableAccordions: false
+  disableExpandAll: true
+  items:
+    - title: Overview
+      link: /gpus/
+      items:
+        # some common comparisons people also looked at on npmtrends.com
+        - title: 2080 Ti
+          link: /gpus/2080ti/
+        - title: Titan RTX
+          link: /gpus/titanrtx/
