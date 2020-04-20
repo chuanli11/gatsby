@@ -4,7 +4,7 @@ import { Component } from "react"
 import { Helmet } from "react-helmet"
 import PageWithSidebar from "../components/page-with-sidebar"
 import FooterLinks from "../components/shared/footer-links"
-import Container from "../components/container"
+import Container from "../components/container_wide"
 
 import { graphql } from "gatsby"
 

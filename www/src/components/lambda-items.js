@@ -302,17 +302,17 @@ function getDataByModelName(data, key) {
 }
 
 
-function mergeData(data, key) {
+function mergeData(data_fp32, data_fp16, key, precision) {
     const merged_model_data = []
 
-    for (var i = 0; i < data.allPytorchBenchmarkThroughputFp32Csv.nodes.length; i++){
-        var fp32 = data.allPytorchBenchmarkThroughputFp32Csv.nodes[i][key.toLowerCase().concat('_FP32')];
-        var fp16 = key.toLowerCase().concat("_FP16") in data.allPytorchBenchmarkThroughputFp16Csv.nodes[i] ?  data.allPytorchBenchmarkThroughputFp16Csv.nodes[i][key.toLowerCase().concat("_FP16")] : data.allPytorchBenchmarkThroughputFp16Csv.nodes[i][data.selected_model.toLowerCase().concat("_AMP")]
+    for (var i = 0; i < data_fp32.nodes.length; i++){
+        var fp32 = data_fp32.nodes[i][key.toLowerCase().concat('_FP32')];
+        var fp16 = key.toLowerCase().concat("_FP16") in data_fp16.nodes[i] ?  data_fp16.nodes[i][key.toLowerCase().concat("_FP16")] : data_fp16.nodes[i][data.selected_model.toLowerCase().concat("_AMP")]
         merged_model_data.push(
             {
-                'name_gpu': data.allPytorchBenchmarkThroughputFp32Csv.nodes[i].name_gpu,
-                'data_fp32': parseFloat(fp32).toFixed(2),
-                'data_fp16': parseFloat(fp16).toFixed(2)
+                'name_gpu': data_fp32.nodes[i].name_gpu,
+                'data_fp32': parseFloat(fp32).toFixed(precision),
+                'data_fp16': parseFloat(fp16).toFixed(precision)
             }
         )
         
@@ -394,8 +394,11 @@ export function ModelChart(props) {
       }
     `)
 
+    const data_fp32 = props.selected_metric == "throughput" ?  data.allPytorchBenchmarkThroughputFp32Csv : data.allPytorchBenchmarkBsFp32Csv
+    const data_fp16 = props.selected_metric == "throughput" ?  data.allPytorchBenchmarkThroughputFp16Csv : data.allPytorchBenchmarkBsFp16Csv
+    const precision = props.selected_metric == "throughput" ?  2 : 0
 
-    const merged_model_data = mergeData(data, props.selected_model)
+    const merged_model_data = mergeData(data_fp32, data_fp16, props.selected_model)
     const max_throughput = Math.max.apply(Math, merged_model_data.map(function(o) { return o.data_fp16; }))
     console.log(merged_model_data)
 
@@ -415,12 +418,12 @@ export function ModelChart(props) {
                     <Legend layout="horizontal" verticalAlign="top"/>
                     <Bar name="fp16" dataKey="data_fp16" fill="#ecb157" isAnimationActive={false}>
                         { merged_model_data.map((entry, index) => (
-                            <Cell fillOpacity={entry.name_gpu == props.selected_gpu ?  1.0 : 0.5}  />
+                            <Cell fillOpacity={entry.name_gpu == props.selected_gpu ?  1.0 : 1.0}  />
                         ))}                
                     </Bar>                 
                     <Bar name="fp32" dataKey="data_fp32" fill="#8884d8" isAnimationActive={false}>
                         { merged_model_data.map((entry, index) => (
-                            <Cell fillOpacity={entry.name_gpu == props.selected_gpu ?  1.0 : 0.5}  />
+                            <Cell fillOpacity={entry.name_gpu == props.selected_gpu ?  1.0 : 1.0}  />
                         ))}                
                     </Bar> 
                 </BarChart>             

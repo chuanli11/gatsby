@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet"
 import { css } from "@emotion/core"
 import PageWithSidebar from "../components/page-with-sidebar"
 import FooterLinks from "../components/shared/footer-links"
-import Container from "../components/container"
+import Container from "../components/container_wide"
 
 import { graphql } from "gatsby"
 

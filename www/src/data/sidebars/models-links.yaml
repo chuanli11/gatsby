@@ -7,11 +7,3 @@
       link: /models/
     - title: ResNet
       link: /models/resnet/
-      ui: steps
-      items:
-        - title: Section One
-          link: /models/resnet/#section-one
-        - title: Section Two
-          link: /models/resnet/#section-two
-        - title: benchmark
-          link: /models/resnet/#benchmark
