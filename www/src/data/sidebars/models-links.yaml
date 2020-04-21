@@ -8,4 +8,6 @@
     - title: ResNet
       link: /models/resnet/
     - title: SSD
-      link: /models/ssd/      
+      link: /models/ssd/
+    - title: Mask R-CNN
+      link: /models/maskrcnn/            

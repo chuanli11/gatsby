@@ -398,7 +398,7 @@ export function ModelChart(props) {
     const data_fp16 = props.selected_metric == "throughput" ?  data.allPytorchBenchmarkThroughputFp16Csv : data.allPytorchBenchmarkBsFp16Csv
     const precision = props.selected_metric == "throughput" ?  2 : 0
 
-    const merged_model_data = mergeData(data_fp32, data_fp16, props.selected_model)
+    const merged_model_data = mergeData(data_fp32, data_fp16, props.selected_model, precision)
     const max_throughput = Math.max.apply(Math, merged_model_data.map(function(o) { return o.data_fp16; }))
 
     return (
@@ -412,7 +412,7 @@ export function ModelChart(props) {
                     }}
                     >
                     <YAxis type="category" interval={0} angle={-40} dataKey="name_gpu" textAnchor="end" tick={{fontSize: 15}} />
-                    <XAxis type="number" domain={[0, Math. round(( max_throughput * 1.1) / 100) * 100]}/>
+                    <XAxis type="number" domain={[0, Math. round(( max_throughput * 1.1) / 10) * 10]}/>
                     <Tooltip />
                     <Legend layout="horizontal" verticalAlign="top"/>
                     <Bar name="fp16" dataKey="data_fp16" fill="#ecb157" isAnimationActive={false}>
