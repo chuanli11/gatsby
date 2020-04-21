@@ -7,3 +7,5 @@
       link: /models/
     - title: ResNet
       link: /models/resnet/
+    - title: SSD
+      link: /models/ssd/      

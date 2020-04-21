@@ -307,7 +307,7 @@ function mergeData(data_fp32, data_fp16, key, precision) {
 
     for (var i = 0; i < data_fp32.nodes.length; i++){
         var fp32 = data_fp32.nodes[i][key.toLowerCase().concat('_FP32')];
-        var fp16 = key.toLowerCase().concat("_FP16") in data_fp16.nodes[i] ?  data_fp16.nodes[i][key.toLowerCase().concat("_FP16")] : data_fp16.nodes[i][data.selected_model.toLowerCase().concat("_AMP")]
+        var fp16 = key.toLowerCase().concat("_FP16") in data_fp16.nodes[i] ?  data_fp16.nodes[i][key.toLowerCase().concat("_FP16")] : data_fp16.nodes[i][key.toLowerCase().concat("_AMP")]
         merged_model_data.push(
             {
                 'name_gpu': data_fp32.nodes[i].name_gpu,
@@ -393,16 +393,15 @@ export function ModelChart(props) {
         }
       }
     `)
-
+    
     const data_fp32 = props.selected_metric == "throughput" ?  data.allPytorchBenchmarkThroughputFp32Csv : data.allPytorchBenchmarkBsFp32Csv
     const data_fp16 = props.selected_metric == "throughput" ?  data.allPytorchBenchmarkThroughputFp16Csv : data.allPytorchBenchmarkBsFp16Csv
     const precision = props.selected_metric == "throughput" ?  2 : 0
 
     const merged_model_data = mergeData(data_fp32, data_fp16, props.selected_model)
     const max_throughput = Math.max.apply(Math, merged_model_data.map(function(o) { return o.data_fp16; }))
-    console.log(merged_model_data)
 
-        return (
+    return (
                 <BarChart
                     width={500}
                     height={400}

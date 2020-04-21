@@ -25,7 +25,7 @@ ResNet's performance is mainly tested by the [ImageNet](http://www.image-net.org
 
 import { ModelChart } from './../../../www/src/components/lambda-items.js'
 
-We benchmark ResNet50's training performance using different GPUs in both FP32 and FP16 precisions. The benchmark is conducted using NVidia docker images. TYou can use this [repository](https://github.com/lambdal/deeplearning-benchmark) to reproduce the results in the charts below.
+We benchmark ResNet50's training performance using different GPUs in both FP32 and FP16 precisions. The benchmark is conducted using NVidia docker images. You can use this [repository](https://github.com/lambdal/deeplearning-benchmark) to reproduce the results in the charts below.
 
 
 <ModelChart selected_model='resnet50' selected_gpu='V100' selected_metric="throughput"/>
