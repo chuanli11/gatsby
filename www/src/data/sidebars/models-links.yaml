@@ -12,4 +12,6 @@
     - title: Mask R-CNN
       link: /models/maskrcnn/
     - title: BERT
-      link: /models/bert/                     
+      link: /models/bert/
+    - title: Transformer XL
+      link: /models/transformerxl/                                
