@@ -14,4 +14,6 @@
     - title: BERT
       link: /models/bert/
     - title: Transformer XL
-      link: /models/transformerxl/                                
+      link: /models/transformerxl/
+    - title: GNMT
+      link: /models/gnmt/                                                                      
