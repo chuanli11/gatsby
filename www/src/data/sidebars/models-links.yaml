@@ -20,4 +20,6 @@
     - title: NCF
       link: /models/ncf/
     - title: Tacotron
-      link: /models/tacotron/                
+      link: /models/tacotron/
+    - title: Waveglow
+      link: /models/waveglow/                      
