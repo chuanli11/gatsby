@@ -16,4 +16,6 @@
     - title: Transformer XL
       link: /models/transformerxl/
     - title: GNMT
-      link: /models/gnmt/                                                                      
+      link: /models/gnmt/
+    - title: NCF
+      link: /models/ncf/      
