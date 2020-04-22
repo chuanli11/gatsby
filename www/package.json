@@ -110,7 +110,8 @@
     "@mui-treasury/styles": "0.4.0",
     "recharts": "^1.8.5",
     "material-table": "1.57.2",
-    "gatsby-remark-images": "^3.1.50"            
+    "gatsby-remark-images": "^3.1.50",
+    "gatsby-remark-audio": "^1.0.2"            
   },
   "keywords": [
     "gatsby"

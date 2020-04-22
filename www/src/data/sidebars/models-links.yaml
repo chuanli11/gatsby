@@ -18,4 +18,6 @@
     - title: GNMT
       link: /models/gnmt/
     - title: NCF
-      link: /models/ncf/      
+      link: /models/ncf/
+    - title: Tacotron
+      link: /models/tacotron/                
