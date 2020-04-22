@@ -15,10 +15,11 @@ const packages = require(`./src/utils/node/packages.js`)
 const features = require(`./src/utils/node/features.js`)
 const gpus = require(`./src/utils/node/gpus.js`)
 const benchmarks = require(`./src/utils/node/benchmarks.js`)
-const models = require(`./src/utils/node/models.js`)
+// const models = require(`./src/utils/node/models.js`)
 
-const sections = [docs, showcase, starters, creators, packages, features, gpus, benchmarks, models]
+// const sections = [docs, showcase, starters, creators, packages, features, gpus, benchmarks, models]
 
+const sections = [docs, showcase, starters, creators, packages, features, gpus, benchmarks]
 
 exports.createPages = async helpers => {
   const { actions } = helpers
