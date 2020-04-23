@@ -7,7 +7,17 @@
       link: /gpus/
       items:
         # some common comparisons people also looked at on npmtrends.com
-        - title: 2080 Ti
-          link: /gpus/2080ti/
+        - title: V100 32GB SXM2
+          link: /gpus/v100/
+        - title: Quadro RTX 8000
+          link: /gpus/quadrortx8000/
+        - title: Quadro RTX 6000
+          link: /gpus/quadrortx6000/
+        - title: Quadro RTX 5000
+          link: /gpus/quadrortx5000/                            
         - title: Titan RTX
           link: /gpus/titanrtx/
+        - title: 2080 Ti
+          link: /gpus/2080ti/          
+        - title: 1080 Ti
+          link: /gpus/1080ti/          
