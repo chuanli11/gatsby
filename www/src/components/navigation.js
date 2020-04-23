@@ -12,8 +12,8 @@ import {
 
 import Link from "./localized-link"
 import SearchForm from "./search-form"
-import logo from "../assets/lambda-labs-logo.png"
-import logoInverted from "../assets/lambda-labs-logo.png"
+import logo from "../assets/lambda-logo.png"
+import logoInverted from "../assets/lambda-logo.png"
 import { mediaQueries } from "gatsby-design-tokens/dist/theme-gatsbyjs-org"
 import { breakpointGutter } from "../utils/styles"
 import DarkModeToggle from "./dark-mode-toggle"
