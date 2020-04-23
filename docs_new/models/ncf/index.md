@@ -4,6 +4,9 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
+[Paper](https://arxiv.org/abs/1708.05031)   &nbsp; &nbsp; &nbsp; &nbsp; [Code](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Recommendation/NCF)
+
+
 [Recommendation system](https://en.wikipedia.org/wiki/Recommender_system) is a commercial application that predicts the "rating" or "preference" a user would give to an item. One popular design of recommendation systems is collaborative filtering (CF). It is based on the assumption that people who agreed in the past will agree in the future, and that they will like similar kinds of items as they liked in the past. It generates recommendations using only information about rating profiles for different users or items, and does not require an "understanding" of the item itself.
 
 Neural Collaborative Filtering (NCF) is invented to replace the matrix factorization step in CF with a neural architecture that learns an arbitary function from the interaction between user and item features. Experiments on the [MovieLens](https://grouplens.org/datasets/movielens/20m/) dataset shows the model achieves 0.958 for HR@10 (Hit Ratio at 10).

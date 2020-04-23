@@ -4,6 +4,8 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
+[Paper](https://arxiv.org/abs/1811.00002)   &nbsp; &nbsp; &nbsp; &nbsp; [Code](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/SpeechSynthesis/Tacotron2)
+
 [Text to Speech Synthesis](https://en.wikipedia.org/wiki/Speech_synthesis) generates audios of human speech from text input. Early concatenative synthesis approaches stitch small units of pre-recorded waveforms, hence produce strong boundary artifacts between the units. Statistical parametric approaches can directly generate smoother audio trajectories, but at the cost of producing audio that sounds muffled and unnatural compared to human speech.
 
 [Waveglow](https://arxiv.org/abs/1811.00002) is a flow-based generative model that generates audio samples from Gaussian distribution using mel-spectrogram conditioning. WaveGlow is implemented using only a single network, trained using only a single cost function: maximizing the likelihood of the training data, which makes the training procedure simple and stable. Its PyTorch implementation produces audio samples at a rate of more than 500 kHz on an NVIDIA V100 GPU. Mean Opinion Scores show that it delivers audio quality as good as the best publicly available [WaveNet](https://arxiv.org/abs/1609.03499) implementation. 
@@ -22,17 +24,10 @@ Waveglow is trained on the [LJSpeech-1.1](https://keithito.com/LJ-Speech-Dataset
 
 The original [Waveglow paper](https://arxiv.org/abs/1811.00002) evaluated the performance of the model with crowd-sourced Mean Opinion Score (MOS) tests on Amazon Mechanical Turk. Waveglow delivers audio quality as good as the best publicly available [WaveNet](https://arxiv.org/abs/1609.03499) implementation.
 
-<!-- Mel stands for Mel Spectrogram, a way of visualizing sound as a Spectrogram in [Mel Scale](https://en.wikipedia.org/wiki/Mel_scale). The Mel Scale converts sound into numbers so that the distance between the numbers matches the distance as it registers to the human ear. It is a “perceptual” scale, where each tone in Hz has a perceptual pitch on the Mel Scale.  -->
-
-<!-- ![MovieLens](movielens.png)*MovieLens gives personalized movie recommendations to users based on their rating. Image from [MovieLens](https://movielens.org/)* -->
-
-
 Below is a sample from [LJSpeech-1.1](https://keithito.com/LJ-Speech-Dataset/) dataset:
 
+>  Many animals of even complex structure which live parasitically within others are wholly devoid of an alimentary cavity.
 
-```
-Many animals of even complex structure which live parasitically within others are wholly devoid of an alimentary cavity.
-```
 
 <iframe allowtransparency="true" style="background: #FFFFFF;" width="100%" height="155" frameborder="0"
 src="https://keithito.com/LJ-Speech-Dataset/LJ025-0076.wav"></iframe>

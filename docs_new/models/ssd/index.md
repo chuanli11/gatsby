@@ -4,6 +4,8 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
+[Paper](https://arxiv.org/abs/1512.02325)   &nbsp; &nbsp; &nbsp; &nbsp; [Code](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Detection/SSD)
+
 Object detection has been a central problem in computer vision and pattern recognition. Its goal is to recognize `what` objects are inside of an image and localize `where` they are. Given an input image, the algorithm outputs a list of objects, each associated with a class label and location (usually in the form of bounding box coordinates).
 
 Since the 2010s, the field of object detection has made significant progress with the help of deep learning. [Single Shot MultiBox Detector (SSD)](https://arxiv.org/abs/1512.02325) is a milestone Neural Netowrks based object detector invented in 2015. SSD300 (with `300 x 300` input) achieved 72.1% mean average precision (mAP) on the [PASCAL Visual Object Classes Challenge](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/) test at 58 FPS on a Nvidia Titan X and SSD512 achieved 75.1% mAP at 22 FPS. On the more challenging [MSCOCO](http://cocodataset.org/) dataset, the mAPs for SSD300 and SSD500 are `23.2` and `26.8` respectively.

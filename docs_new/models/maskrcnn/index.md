@@ -4,6 +4,8 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
+[Paper](https://arxiv.org/abs/1703.06870)   &nbsp; &nbsp; &nbsp; &nbsp; [Code](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/Segmentation/MaskRCNN)
+
 Mask R-CNN addresses the problem of `instance segmentation`, which takes object detection a step further by producing not only the bounding box but also the detailed shape of each object. An intuitive way to think about this task is to produce a binary mask for each detected object, so the background pixels can be removed from the content inside of the bounding box.
 
 Mask R-CNN won the 2016 MSCOCO detection challenge with 37.1% `mask mean average precision` (mask mAP). Its recent variation with a [cascade architecture](https://arxiv.org/abs/1909.03625) further increased the performance to 43.3%. Mask R-CNN has been a very popular choice for customization via [transfer learning](https://github.com/matterport/Mask_RCNN), due to the conceptually simple, flexible, and general framework.

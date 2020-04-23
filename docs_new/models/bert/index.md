@@ -4,6 +4,8 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
+[Paper](https://arxiv.org/abs/1810.04805)   &nbsp; &nbsp; &nbsp; &nbsp; [Code](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/LanguageModeling/BERT)
+
 Learning language representation is central to many NLP tasks. Early language modeling methods concern the problem of mapping individual words or phrases from the vocabulary to [vectors of real numbers](https://en.wikipedia.org/wiki/Word2vec), so numerical computation can be applied to input texts. The holy grail of language modeling, however, is to build a statistical model over a sequence of words, so a probability can be assigned to a word given the context surrounding the word. A strong language model is crucial to downstream tasks such as sentence classification, sentence pair classification, question answering, and text generation etc.
 
 [BERT](https://arxiv.org/abs/1810.04805), short for Bidirectional Encoder Representations from Transformers, is designed to pre-train deep language representation from unlabeled text. When published in 2018, fine-tuned BERT models obtained state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).

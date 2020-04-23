@@ -4,6 +4,8 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
+[Paper](https://arxiv.org/abs/1712.05884)   &nbsp; &nbsp; &nbsp; &nbsp; [Code](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/SpeechSynthesis/Tacotron2)
+
 [Text to Speech Synthesis](https://en.wikipedia.org/wiki/Speech_synthesis) generates audios of human speech from text input. Early concatenative synthesis approaches stitch small units of pre-recorded waveforms, hence produce strong boundary artifacts between the units. Statistical parametric approaches can directly generate smoother audio trajectories, but at the cost of producing audio that sounds muffled and unnatural compared to human speech.
 
 [Tacotron](https://arxiv.org/abs/1712.05884) is a neural network architecture that learns speech synthesis in an end to end fashion. Once trained, the model can synthesize natural sounding speech that is difficult to distinguish from real human speech. It achieves a [mean opinion score](https://en.wikipedia.org/wiki/Mean_opinion_score) (MOS) of 4.53, which is comparable to a MOS of 4.58 for professionally recorded speech.
@@ -30,9 +32,9 @@ The original [Tacotron paper](https://arxiv.org/abs/1712.05884) evaluated the pe
 Below is a sample from [LJSpeech-1.1](https://keithito.com/LJ-Speech-Dataset/) dataset:
 
 
-```
-Many animals of even complex structure which live parasitically within others are wholly devoid of an alimentary cavity.
-```
+
+> Many animals of even complex structure which live parasitically within others are wholly devoid of an alimentary cavity.
+
 
 <iframe allowtransparency="true" style="background: #FFFFFF;" width="100%" height="155" frameborder="0"
 src="https://keithito.com/LJ-Speech-Dataset/LJ025-0076.wav"></iframe>

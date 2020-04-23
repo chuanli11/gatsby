@@ -4,6 +4,8 @@ typora-copy-images-to: ./
 disableTableOfContents: true
 ---
 
+[Paper](https://arxiv.org/abs/1901.02860)   &nbsp; &nbsp; &nbsp; &nbsp; [Code](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch/LanguageModeling/Transformer-XL)
+
 Learning language representation is central to many NLP tasks. It is relatively straightforward to learn representations for [individual words](https://en.wikipedia.org/wiki/Word2vec) or phrases. However, for tasks such as machine translation, it is necessary to take the entire input into consideration and produce a sequence level representation.
 
 Early methods like [seq2seq](https://arxiv.org/abs/1409.3215) compress the input sequence into a "thought vector", and then uncompress the thought vector to the transformed output. A crucial disadvantage of this approach is that all the information needed for producing the output has to be stored in the fixed-dimensional thought vector, which is inefficient when input sequences become longer. Imagining how human translate a long paragraph of text: we rarely memorize the entire paragraph before spelling out its translation. Instead, we progress in a block by block fashion, searching back and forth for the relavent context.
