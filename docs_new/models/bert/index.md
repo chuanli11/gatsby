@@ -35,7 +35,18 @@ A popular question answering dataset is The Stanford Question Answering Dataset 
 
 import { ModelChart } from './../../../www/src/components/lambda-items.js'
 
-We benchmark the training throughput for two different flavors of BERT (base and large) using different GPUs in both FP32 and FP16 precisions. The benchmark is conducted using NVidia docker images. You can use this [repository](https://github.com/lambdal/deeplearning-benchmark) to reproduce the results in the charts below.
+We benchmark the training throughput for two different flavors of BERT (base and large) using different GPUs in both FP32 and FP16 precisions. The benchmark is conducted using NVidia docker images. You can use this [repository](https://github.com/lambdal/deeplearning-benchmark) and the following command to reproduce the results in the charts below.
+
+```
+docker run --gpus <devices> \
+--rm --shm-size=16g \
+-v ~/data:/data \
+-v $(pwd)"/scripts":/scripts \
+-v $(pwd)"/results":/results nvcr.io/nvidia/pytorch:20.01-py3 \
+/bin/bash -c "cp -r /scripts/* /workspace; ./run_benchmark.sh <config_name> bert"
+```
+- `devices`: List of GPU devices. For example: "all", "0", "0,1".
+- `config_name`: Name of GPU configuration. Select from `["V100", "QuadroRTX8000", "QuadroRTX6000", "QuadroRTX5000", "TitanRTX", "2080Ti", "1080Ti"]`.
 
 
 <ModelChart selected_model='bert_base_squad' selected_gpu='V100' selected_metric="throughput"/>
