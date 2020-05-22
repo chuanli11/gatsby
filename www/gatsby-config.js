@@ -76,10 +76,10 @@ if (i18nEnabled) {
 
 module.exports = {
   siteMetadata: {
-    title: `GatsbyJS`,
-    siteUrl: `https://www.gatsbyjs.org`,
-    description: `Blazing fast modern site generator for React`,
-    twitter: `@gatsbyjs`,
+    title: `Lambda`,
+    siteUrl: `https://www.lambdalabs.com`,
+    description: `Deep Learning Workstations, Servers, Laptops for 2020`,
+    twitter: `@LambdaAPI`,
   },
   mapping: {
     "MarkdownRemark.frontmatter.author": `AuthorYaml`,
