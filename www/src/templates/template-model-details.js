@@ -23,7 +23,6 @@ class ModelTemplate extends Component {
       data,
     } = this.props
     const titleString = `${ this.props.pageContext.model }`
-    { console.log(this.props) }
 
     return (
       <PageWithSidebar location={location}>

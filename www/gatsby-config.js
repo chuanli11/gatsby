@@ -75,6 +75,10 @@ if (i18nEnabled) {
 }
 
 module.exports = {
+  // CHUAN: prefix-paths https://www.gatsbyjs.org/docs/path-prefix/
+  // gatsby build --prefix-paths
+  // gatsby serve --prefix-paths
+  pathPrefix: `/deep-learning/test`,
   siteMetadata: {
     title: `Lambda`,
     siteUrl: `https://www.lambdalabs.com`,
