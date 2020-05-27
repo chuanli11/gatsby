@@ -6,11 +6,16 @@ import { getItemList } from "../utils/sidebar/item-list"
 import StickyResponsiveSidebar from "./sidebar/sticky-responsive-sidebar"
 
 export default ({ children, enableScrollSync, location }) => {
-  // console.log(location.pathname)
+
   // CHUAN: Hacky solution to remove prefix-paths for sidebar to work
   // Otherwise itemList can not be found
-  console.log(location.pathname.split("/").slice(2, -1).join("/"))
+  
+  // Use this line for Lambda deployment
   const itemList = getItemList(location.pathname.split("/").slice(2, -1).join("/"))
+
+  // Use this line for local test
+  // const itemList = getItemList(location.pathname)
+
   if (!itemList) {
     return children
   }
