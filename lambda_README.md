@@ -207,6 +207,14 @@ Go to `http://127.0.0.1:8000/deep-learning/test` to see the benchmark website
 __Known Issues__
 
 - [x] <s>Images and CSS are not configured correctly for Lambda</s> Solved by copying static files to folder `rem/lambdal/client/gatsby/deep-learning/test`
+- [ ] Style of GPU pages is not correctly rendered
+
+* if you restart the server and paste the url to the browser, that gives you the right image (bad one)
+* if you restart the server and go to that page by click a link from another page (like the sidebar), that gives you the left image (good one)
+* if you do ctrl + R on the left image, it also messes up
+
+There is a file named `app-2a817d051f9fb81cf239.js` seems to be some cached file. It is referenced in a file named `sw.js`, which is related to [offline rendering](https://www.gatsbyjs.org/packages/gatsby-plugin-sw/). If you `app-2a817d051f9fb81cf239.js` then the GPU page always look bad. It is also the biggest .js file (1.4MB) 
+
 - [ ] The `static/gatsby/deep-learning/test/static` path is too long and causing error in gatsby build ("Cannot copy 'public/static' to a subdirectory of itself, 'public/static/gatsby/deep-learning/test/static'."). But it seems not affecting deployment to `lambdalabs.com`
 
 The syntax for the above path is: `assert prefix` + `path prefix` + `static`.
