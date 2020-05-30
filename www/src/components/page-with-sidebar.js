@@ -11,10 +11,10 @@ export default ({ children, enableScrollSync, location }) => {
   // Otherwise itemList can not be found
 
   // // Use this line for Lambda deployment (deep-learning/test)
-  // const itemList = getItemList(location.pathname.split("/").slice(2, -1).join("/"))
+  const itemList = getItemList(location.pathname.split("/").slice(2, -1).join("/"))
 
   // Use this line for local test
-  const itemList = getItemList(location.pathname)
+  // const itemList = getItemList(location.pathname)
 
   if (!itemList) {
     return children
