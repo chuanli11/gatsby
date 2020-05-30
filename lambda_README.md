@@ -209,6 +209,8 @@ __Known Issues__
 - [x] <s>Images and CSS are not configured correctly for Lambda</s> Solved by copying static files to folder `rem/lambdal/client/gatsby/deep-learning/test`
 - [ ] Style of GPU pages is not correctly rendered
 
+![GPU page rendering](images/gpu_page_style_error.png)
+
 * if you restart the server and paste the url to the browser, that gives you the right image (bad one)
 * if you restart the server and go to that page by click a link from another page (like the sidebar), that gives you the left image (good one)
 * if you do ctrl + R on the left image, it also messes up
