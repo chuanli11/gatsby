@@ -79,6 +79,7 @@ module.exports = {
   // gatsby build --prefix-paths
   // gatsby serve --prefix-paths
   pathPrefix: `/deep-learning/test`,
+  assetPrefix: `static/gatsby`,
   siteMetadata: {
     title: `Lambda`,
     siteUrl: `https://www.lambdalabs.com`,
@@ -377,7 +378,13 @@ module.exports = {
           },
         ]
       }
-    },    
+    },   
+    {
+      resolve: "gatsby-plugin-asset-path",
+      options: {
+        fileTypes: ["js", "map", "css"],
+      },
+    },      
     // `gatsby-plugin-subfont`,
   ].concat(dynamicPlugins),
 }

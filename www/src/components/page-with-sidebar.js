@@ -9,12 +9,12 @@ export default ({ children, enableScrollSync, location }) => {
 
   // CHUAN: Hacky solution to remove prefix-paths for sidebar to work
   // Otherwise itemList can not be found
-  
-  // Use this line for Lambda deployment
-  const itemList = getItemList(location.pathname.split("/").slice(2, -1).join("/"))
+
+  // // Use this line for Lambda deployment (deep-learning/test)
+  // const itemList = getItemList(location.pathname.split("/").slice(2, -1).join("/"))
 
   // Use this line for local test
-  // const itemList = getItemList(location.pathname)
+  const itemList = getItemList(location.pathname)
 
   if (!itemList) {
     return children
