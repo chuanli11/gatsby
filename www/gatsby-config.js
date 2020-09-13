@@ -396,6 +396,6 @@ module.exports = {
         //   injectFirst: true,
         // },
       },
-    },    
+    },
   ].concat(dynamicPlugins),
 }

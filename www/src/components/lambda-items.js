@@ -123,7 +123,7 @@ export default function Empty() {
 export function BenchmarkTable(props) {
     const classes = useStyles();
     return(
-        // <ResponsiveContainer height={"90%"} >
+        <ResponsiveContainer height={"90%"} >
         <TableContainer className={ classes.table }>
         
             <MaterialTable
@@ -173,7 +173,7 @@ export function BenchmarkTable(props) {
             />
         
         </TableContainer>
-        // </ResponsiveContainer>
+        </ResponsiveContainer>
       )
 }
 

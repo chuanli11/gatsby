@@ -28,16 +28,16 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const docsTemplate = path.resolve(`src/templates/template-docs-markdown.js`)
-  const apiTemplate = path.resolve(`src/templates/template-api-markdown.js`)
-  const blogPostTemplate = path.resolve(`src/templates/template-blog-post.js`)
-  const blogListTemplate = path.resolve(`src/templates/template-blog-list.js`)
-  const tagTemplate = path.resolve(`src/templates/tags.js`)
-  const contributorPageTemplate = path.resolve(
-    `src/templates/template-contributor-page.js`
-  )
-  const localPackageTemplate = path.resolve(
-    `src/templates/template-docs-local-packages.js`
-  )
+  // const apiTemplate = path.resolve(`src/templates/template-api-markdown.js`)
+  // const blogPostTemplate = path.resolve(`src/templates/template-blog-post.js`)
+  // const blogListTemplate = path.resolve(`src/templates/template-blog-list.js`)
+  // const tagTemplate = path.resolve(`src/templates/tags.js`)
+  // const contributorPageTemplate = path.resolve(
+  //   `src/templates/template-contributor-page.js`
+  // )
+  // const localPackageTemplate = path.resolve(
+  //   `src/templates/template-docs-local-packages.js`
+  // )
 
   const { data, errors } = await graphql(`
     query {
@@ -94,84 +94,6 @@ exports.createPages = async ({ graphql, actions }) => {
     _.get(post, `fields.released`)
   )
 
-  // Create blog-list pages.
-  const postsPerPage = 8
-  const numPages = Math.ceil(releasedBlogPosts.length / postsPerPage)
-
-  Array.from({
-    length: numPages,
-  }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
-      component: slash(blogListTemplate),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
-  })
-
-  // Create blog-post pages.
-  blogPosts.forEach((node, index) => {
-    let next = index === 0 ? null : blogPosts[index - 1]
-    if (next && !_.get(next, `fields.released`)) next = null
-
-    const prev = index === blogPosts.length - 1 ? null : blogPosts[index + 1]
-
-    createPage({
-      path: `${node.fields.slug}`, // required
-      component: slash(blogPostTemplate),
-      context: {
-        slug: node.fields.slug,
-        prev: prev && {
-          title: prev.frontmatter.title,
-          link: prev.fields.slug,
-        },
-        next: next && {
-          title: next.frontmatter.title,
-          link: next.fields.slug,
-        },
-      },
-    })
-  })
-
-  const makeSlugTag = tag => _.kebabCase(tag.toLowerCase())
-
-  // Collect all tags and group them by their kebab-case so that
-  // hyphenated and spaced tags are treated the same. e.g
-  // `case-study` -> [`case-study`, `case study`]. The hyphenated
-  // version will be used for the slug, and the spaced version
-  // will be used for human readability (see templates/tags)
-  const tagGroups = _(releasedBlogPosts)
-    .map(post => _.get(post, `frontmatter.tags`))
-    .filter()
-    .flatten()
-    .uniq()
-    .groupBy(makeSlugTag)
-
-  tagGroups.forEach((tags, tagSlug) => {
-    createPage({
-      path: `/blog/tags/${tagSlug}/`,
-      component: tagTemplate,
-      context: {
-        tags,
-      },
-    })
-  })
-
-  // Create contributor pages.
-  data.allAuthorYaml.nodes.forEach(node => {
-    createPage({
-      path: `${node.fields.slug}`,
-      component: slash(contributorPageTemplate),
-      context: {
-        slug: node.fields.slug,
-      },
-    })
-  })
-
   // Create docs pages.
   const docPages = data.allMdx.nodes
   docPages.forEach(node => {
@@ -183,25 +105,25 @@ exports.createPages = async ({ graphql, actions }) => {
       const prevAndNext = getPrevAndNext(node.fields.slug)
       if (node.frontmatter.jsdoc) {
         // API template
-        createPage({
-          path: `${node.fields.slug}`,
-          component: slash(apiTemplate),
-          context: {
-            slug: node.fields.slug,
-            jsdoc: node.frontmatter.jsdoc,
-            apiCalls: node.frontmatter.apiCalls,
-            ...prevAndNext,
-          },
-        })
+        // createPage({
+        //   path: `${node.fields.slug}`,
+        //   component: slash(apiTemplate),
+        //   context: {
+        //     slug: node.fields.slug,
+        //     jsdoc: node.frontmatter.jsdoc,
+        //     apiCalls: node.frontmatter.apiCalls,
+        //     ...prevAndNext,
+        //   },
+        // })
       } else if (node.fields.package) {
         // Local package template
-        createPage({
-          path: `${node.fields.slug}`,
-          component: slash(localPackageTemplate),
-          context: {
-            slug: node.fields.slug,
-          },
-        })
+        // createPage({
+        //   path: `${node.fields.slug}`,
+        //   component: slash(localPackageTemplate),
+        //   context: {
+        //     slug: node.fields.slug,
+        //   },
+        // })
       } else {
         // Docs template
         createPage({

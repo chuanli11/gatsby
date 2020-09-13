@@ -1,42 +1,29 @@
 const Promise = require(`bluebird`)
 const fetch = require(`node-fetch`)
-const fs = require(`fs-extra`)
 const child_process = require(`child_process`)
-const startersRedirects = require(`./starter-redirects.json`)
-const yaml = require(`js-yaml`)
-// const redirects = yaml.load(fs.readFileSync(`./redirects.yaml`))
 const { i18nEnabled } = require(`./src/utils/i18n`)
 
 const docs = require(`./src/utils/node/docs.js`)
-const showcase = require(`./src/utils/node/showcase.js`)
-const starters = require(`./src/utils/node/starters.js`)
-const creators = require(`./src/utils/node/creators.js`)
-const packages = require(`./src/utils/node/packages.js`)
-const features = require(`./src/utils/node/features.js`)
+// const showcase = require(`./src/utils/node/showcase.js`)
+// const starters = require(`./src/utils/node/starters.js`)
+// const creators = require(`./src/utils/node/creators.js`)
+// const packages = require(`./src/utils/node/packages.js`)
+// const features = require(`./src/utils/node/features.js`)
 const gpus = require(`./src/utils/node/gpus.js`)
 const benchmarks = require(`./src/utils/node/benchmarks.js`)
-// const models = require(`./src/utils/node/models.js`)
-
-// const sections = [docs, showcase, starters, creators, packages, features, gpus, benchmarks, models]
-
-const sections = [docs, showcase, starters, creators, packages, features, gpus, benchmarks]
+const sections = [docs, gpus, benchmarks]
 
 exports.createPages = async helpers => {
-  const { actions } = helpers
-  const { createRedirect } = actions
-
-  // redirects.forEach(redirect => {
-  //   createRedirect({ isPermanent: true, ...redirect, force: true })
+  // const { actions } = helpers
+  // const { createRedirect } = actions
+  // Object.entries(startersRedirects).forEach(([fromSlug, toSlug]) => {
+  //   createRedirect({
+  //     fromPath: `/starters${fromSlug}`,
+  //     toPath: `/starters${toSlug}`,
+  //     isPermanent: true,
+  //     force: true,
+  //   })
   // })
-
-  Object.entries(startersRedirects).forEach(([fromSlug, toSlug]) => {
-    createRedirect({
-      fromPath: `/starters${fromSlug}`,
-      toPath: `/starters${toSlug}`,
-      isPermanent: true,
-      force: true,
-    })
-  })
 
   await Promise.all(sections.map(section => section.createPages(helpers)))
 }
@@ -52,13 +39,6 @@ exports.onPostBootstrap = () => {
     child_process.execSync(`yarn lingui:build`)
   }
 }
-
-// exports.onPostBuild = () => {
-//   fs.copySync(
-//     `../docs_new/blog/2017-02-21-1-0-progress-update-where-came-from-where-going/gatsbygram.mp4`,
-//     `./public/gatsbygram.mp4`
-//   )
-// }
 
 // XXX this should probably be a plugin or something.
 exports.sourceNodes = async ({
