@@ -1,17 +1,19 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Component } from "react"
+import { Component, createRef } from "react"
 import { Helmet } from "react-helmet"
 import PageWithSidebar from "../components/page-with-sidebar"
 import FooterLinks from "../components/shared/footer-links"
 import Container from "../components/container_wide"
+// import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 
 import { graphql } from "gatsby"
 
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 
-import { GPUProfileCard, GPUChart } from "../components/lambda-items"
+import { GPUProfileCard, GPUChart, Example } from "../components/lambda-items"
 
 import theme from '../theme/lambda-theme.js'
 
@@ -52,6 +54,12 @@ function normalizeData(data_fp16, data_fp32, key_norm) {
 
 
 class GPUTemplate extends Component {
+
+  // constructor(props){
+  //   super(props);
+  //   this.myContainer = createRef()
+  // }
+
   render() {
     const {
       location,
@@ -105,6 +113,7 @@ class GPUTemplate extends Component {
           <title>{titleString}</title>
         </Helmet>
         <Container>
+        <main>
           <Grid container spacing={1} direction="row" justify="space-evenly" alignItems="center">
             <Grid item xs={12} sm={6} md={3}>
                 <GPUProfileCard profile_name="Processor" item_names={ profile_processor.item_names } item_values={ profile_processor.item_values }/>
@@ -125,12 +134,15 @@ class GPUTemplate extends Component {
               </Box>              
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
-              <Box border={1} height="450px" width="100%">
-                <h3 align="center">Batch size w.r.t the best</h3>
-                <GPUChart normalized_gpu_data={ normalized_batchsize } selected_gpu={ this.props.pageContext.gpu } title="Batch Size"/>
-              </Box>         
-            </Grid>                                                                         
+              <div> 
+                <Box border={1} height="450px" width="90%">
+                  <h3 align="center">Batch size w.r.t the best</h3>
+                  <GPUChart normalized_gpu_data={ normalized_batchsize } selected_gpu={ this.props.pageContext.gpu } title="Batch Size"/>
+                </Box>
+              </div>
+            </Grid>                                                             
           </Grid> 
+          </main>
           <FooterLinks />
         </Container>
       </PageWithSidebar>

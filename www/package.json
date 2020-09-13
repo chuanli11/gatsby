@@ -104,15 +104,17 @@
     "zipkin": "^0.19.2",
     "zipkin-javascript-opentracing": "^2.1.0",
     "zipkin-transport-http": "^0.19.2",
-    "@material-ui/core": "^4.9.7",
+    "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "v4.9.1",
-    "@material-ui/styles": "^4.9.6",
+    "@material-ui/styles": "^4.10.0",
     "@mui-treasury/styles": "0.4.0",
     "recharts": "^1.8.5",
     "material-table": "1.57.2",
     "gatsby-remark-images": "^3.1.50",
     "gatsby-remark-audio": "^1.0.2",
-    "gatsby-plugin-asset-path": "3.0.1"
+    "gatsby-plugin-asset-path": "3.0.1",
+    "babel-plugin-styled-components": "^1.11.1",
+    "gatsby-plugin-material-ui": "^2.0.0-alpha.6"
   },
   "keywords": [
     "gatsby"
@@ -158,7 +160,7 @@
     "lingui:build": "yarn lingui:extract && yarn lingui:compile"
   },
   "devDependencies": {
-    "@lingui/cli": "^2.9.1",
+    "@lingui/cli": "^2.9.2",
     "@lingui/macro": "^2.9.1",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^8.0.9",

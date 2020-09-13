@@ -1694,23 +1694,6 @@
     - Styled with Tachyons.
     - Rich structured data on blog posts for SEO.
     - Pagination and category pages.
-- url: https://gatsby-starter-styled.netlify.com/
-  repo: https://github.com/gregoralbrecht/gatsby-starter-styled
-  description: Yet another simple starter with Styled-System, Typography.js, SEO and Google Analytics.
-  tags:
-    - Styling:CSS-in-JS
-    - PWA
-    - SEO
-  features:
-    - Styled-Components
-    - Styled-System
-    - Rebass Grid
-    - Typography.js to easily set up font styles
-    - Google Analytics
-    - Prettier, ESLint & Stylelint
-    - SEO (meta tags and schema.org via JSON-LD)
-    - Offline support
-    - Web App Manifest
 - url: https://gatsby.ghost.org/
   repo: https://github.com/TryGhost/gatsby-starter-ghost
   description: Build lightning-fast, modern publications with Ghost and Gatsby
@@ -2209,16 +2192,6 @@
     - Gatsby image
     - Google Analytics
     - Minimal design
-- url: https://thakkaryash94.github.io/gatsby-github-personal-website/
-  repo: https://github.com/thakkaryash94/gatsby-github-personal-website
-  description: It is a conversion of original GitHub personal website repo which is written in ruby for JS developers. This repository gives you the code you'll need to kickstart a personal website that showcases your work as a software developer. And when you manage the code in a GitHub repository, it will automatically render a webpage with the owner's profile information, including a photo, bio, and repositories.
-  tags:
-    - Portfolio
-    - Onepage
-  features:
-    - layout config either stacked or sidebar
-    - theme dark/light mode
-    - post support
 - url: https://gatsby-starter-default-intl.netlify.com
   repo: https://github.com/wiziple/gatsby-starter-default-intl
   description: The default Gatsby starter with features of multi-language url routes and browser language detection.
@@ -3353,18 +3326,6 @@
     - Styling with SCSS
     - Offline support
     - Web App Manifest
-- url: https://lewis-gatsby-starter-basic.netlify.com
-  repo: https://github.com/lewislbr/lewis-gatsby-starter-basic
-  description: A simple custom basic Gatsby starter template to start a new website.
-  tags:
-    - Styling:CSS-in-JS
-    - SEO
-  features:
-    - Bare-bones starter.
-    - CSS in JS with styled-components.
-    - Optimized images.
-    - Offline capabilities.
-    - Auto-generated sitemap and robots.txt.
 - url: https://myclicks.netlify.com/
   repo: https://github.com/himali-patel/MyClicks
   description: A simple Gatsby starter template to create portfolio website with contentful and Netlify.
@@ -4265,17 +4226,6 @@
     - NetlifyCMS
     - TypeScript
     - Basic design
-- url: https://gatsby-starter-mdx-website-blog.netlify.com/
-  repo: https://github.com/doakheggeness/gatsby-starter-mdx-website-blog
-  description: Gatsby website and blog starter utilizing MDX for adding components to mdx pages and posts. Incorportates Emotion.
-  tags:
-    - MDX
-    - Blog
-    - Styling:CSS-in-JS
-  features:
-    - Create pages and posts using MDX
-    - Incorporates the CSS-in-JS library Emotion
-    - Visual effects
 - url: https://gatsby-starter-zurgbot.netlify.com/
   repo: https://github.com/zurgbot/gatsby-starter-zurgbot
   description: The ultimate force of starter awesomeness in the galaxy of Gatsby
@@ -5245,18 +5195,6 @@
     - Styled Components
     - Comes with React Helmet for adding site meta tags
     - Includes plugins for offline support out of the box
-- url: https://eager-memento.netlify.com/
-  repo: https://github.com/Mr404Found/gatsby-memento-blogpost
-  description: A responsive gatsby portfolio starter to show off or to flex your skills in a single page
-  tags:
-    - Netlify
-    - Markdown
-    - Blog
-    - Styling:Bootstrap
-  features:
-    - React Bootstrap
-    - Responsive webpage
-    - TypeWriter Effect
 - url: https://gatsby-starter-wilde-creations.netlify.com/
   repo: https://github.com/georgewilde/gatsby-starter-wilde-creations
   description: Barebones starter with a minimal number of components to kick off a TypeScript and Styled Components project.
@@ -5390,23 +5328,6 @@
     - Serverless
     - Gatsby
     - Square
-- url: https://gatsby-animate.netlify.com/
-  repo: https://github.com/Mr404Found/gatsby-animate-starter
-  description: A responsive and super simple gatsby starter with awesome animations to components and to build your online solutions website. stay tuned more features coming soon
-  tags:
-    - Netlify
-    - SEO
-    - Blog
-    - Landing Page
-    - Styling:Other
-  features:
-    - Attractive Design
-    - Responsive webpage
-    - Services
-    - Animations
-    - yaml parsing
-    - Component Animations
-    - ReactReveal Library
 - url: https://gatsby-starter-instagram-baseweb.netlify.com/
   repo: https://github.com/timrodz/gatsby-starter-instagram-baseweb
   description: 🎢 A portfolio based on your latest Instagram posts, implemented with the Base Web Design System by Uber. It features out-of-the-box responsive layouts, easy-to-implement components and CSS-in-JS styling.

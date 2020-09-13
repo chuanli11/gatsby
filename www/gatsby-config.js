@@ -80,6 +80,7 @@ module.exports = {
   // gatsby serve --prefix-paths
   pathPrefix: `/deep-learning/test`,
   assetPrefix: `static/gatsby`,
+  // assetPrefix: `gatsby`,
   siteMetadata: {
     title: `Lambda`,
     siteUrl: `https://www.lambdalabs.com`,
@@ -379,12 +380,22 @@ module.exports = {
         ]
       }
     },   
-    {
-      resolve: "gatsby-plugin-asset-path",
-      options: {
-        fileTypes: ["js", "map", "css"],
-      },
-    },      
+    // {
+    //   resolve: "gatsby-plugin-asset-path",
+    //   options: {
+    //     fileTypes: ["js", "map", "css"],
+    //   },
+    // },      
     // `gatsby-plugin-subfont`,
+    `babel-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-material-ui',
+      // If you want to use styled components you should change the injection order.
+      options: {
+        // stylesProvider: {
+        //   injectFirst: true,
+        // },
+      },
+    },    
   ].concat(dynamicPlugins),
 }
