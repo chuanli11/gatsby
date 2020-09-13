@@ -110,7 +110,7 @@ gatsby build --prefix-paths
 
 All the files that need for serving the webpage on the Lambda e-commerce website are in the `gatsby/www/public` folder. 
 
-__Copy Benchmark Pages__
+__Deploy to E-commerce (copy a bunch of files)__
 
 ```
 PATH_PUBLIC=/home/ubuntu/gatsby/www/public
