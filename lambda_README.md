@@ -117,9 +117,10 @@ PATH_PUBLIC=/home/ubuntu/gatsby/www/public
 PATH_STATIC=/home/ubuntu/rem/lambdal/client/gatsby/deep-learning/test
 PATH_TEMPLATE=/home/ubuntu/rem/lambdal/client/templates/test
 
-mkdir -p $PATH_STATIC
-mkdir -p $PATH_TEMPLATE
-
+rm -rf $PATH_STATIC && \
+rm -rf $PATH_TEMPLATE && \
+mkdir -p $PATH_STATIC && \
+mkdir -p $PATH_TEMPLATE && \
 cp -rf ${PATH_PUBLIC}/benchmarks ${PATH_TEMPLATE} && \
 cp -rf ${PATH_PUBLIC}/gpus ${PATH_TEMPLATE} && \
 cp -rf ${PATH_PUBLIC}/models ${PATH_TEMPLATE} && \
